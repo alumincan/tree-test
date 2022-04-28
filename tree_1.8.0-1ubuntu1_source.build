@@ -1,0 +1,37 @@
+ dpkg-buildpackage -us -uc -ui -S
+dpkg-buildpackage: 資訊: 源碼套件 tree
+dpkg-buildpackage: 資訊: 源碼版本 1.8.0-1ubuntu1
+dpkg-buildpackage: 資訊: source distribution focal
+dpkg-buildpackage: 資訊: 源碼變更者： Alucard Lu <alumincan@gmail.com>
+ dpkg-source --before-build .
+ fakeroot debian/rules clean
+dh clean
+   debian/rules override_dh_auto_clean
+make[1]: 進入目錄「/home/boiway/project/tree-1.8.0」
+/usr/bin/make clean
+make[2]: 進入目錄「/home/boiway/project/tree-1.8.0」
+if [ -x tree ]; then rm tree; fi
+if [ -f tree.o ]; then rm *.o; fi
+rm -f *~
+make[2]: 離開目錄「/home/boiway/project/tree-1.8.0」
+make[1]: 離開目錄「/home/boiway/project/tree-1.8.0」
+   dh_clean
+ dpkg-source -b .
+dpkg-source: 警告: Version number suggests Ubuntu changes, but Maintainer: does not have Ubuntu address
+dpkg-source: 警告: Version number suggests Ubuntu changes, but there is no XSBC-Original-Maintainer field
+dpkg-source: 資訊: using source format '3.0 (quilt)'
+dpkg-source: 資訊: building tree using existing ./tree_1.8.0.orig.tar.gz
+dpkg-source: 資訊: using patch list from debian/patches/series
+dpkg-source: 資訊: building tree in tree_1.8.0-1ubuntu1.debian.tar.xz
+dpkg-source: 資訊: building tree in tree_1.8.0-1ubuntu1.dsc
+ dpkg-genbuildinfo --build=source
+ dpkg-genchanges --build=source >../tree_1.8.0-1ubuntu1_source.changes
+dpkg-genchanges: 資訊: not including original source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: 資訊: 上傳二進位和差異 (diff) (＊不＊包含原始源碼)
+Use of uninitialized value $ENV{"DEBEMAIL"} in pattern match (m//) at /usr/bin/debuild line 1069.
+Now running lintian tree_1.8.0-1ubuntu1_source.changes ...
+W: tree source: ancient-standards-version 3.9.8 (released 2016-04-06) (current is 4.5.0)
+W: tree source: maintainer-script-lacks-debhelper-token debian/postinst
+W: tree source: package-uses-deprecated-debhelper-compat-version 9
+Finished running lintian.

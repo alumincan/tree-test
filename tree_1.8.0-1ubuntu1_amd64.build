@@ -1,0 +1,112 @@
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: 資訊: 源碼套件 tree
+dpkg-buildpackage: 資訊: 源碼版本 1.8.0-1ubuntu1
+dpkg-buildpackage: 資訊: source distribution focal
+dpkg-buildpackage: 資訊: 源碼變更者： Alucard Lu <alumincan@gmail.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: 資訊: 主機架構 amd64
+ fakeroot debian/rules clean
+dh clean
+   debian/rules override_dh_auto_clean
+make[1]: 進入目錄「/home/boiway/projects/tree-1.8.0」
+/usr/bin/make clean
+make[2]: 進入目錄「/home/boiway/projects/tree-1.8.0」
+if [ -x tree ]; then rm tree; fi
+if [ -f tree.o ]; then rm *.o; fi
+rm -f *~
+make[2]: 離開目錄「/home/boiway/projects/tree-1.8.0」
+make[1]: 離開目錄「/home/boiway/projects/tree-1.8.0」
+   dh_clean
+ dpkg-source -b .
+dpkg-source: 警告: Version number suggests Ubuntu changes, but Maintainer: does not have Ubuntu address
+dpkg-source: 警告: Version number suggests Ubuntu changes, but there is no XSBC-Original-Maintainer field
+dpkg-source: 資訊: using source format '3.0 (quilt)'
+dpkg-source: 資訊: building tree using existing ./tree_1.8.0.orig.tar.gz
+dpkg-source: 資訊: using patch list from debian/patches/series
+dpkg-source: 資訊: building tree in tree_1.8.0-1ubuntu1.debian.tar.xz
+dpkg-source: 資訊: building tree in tree_1.8.0-1ubuntu1.dsc
+ debian/rules build
+dh build
+   dh_update_autotools_config
+   dh_auto_configure
+   debian/rules override_dh_auto_build
+make[1]: 進入目錄「/home/boiway/projects/tree-1.8.0」
+dh_auto_build -- CFLAGS="-g -O2 -fdebug-prefix-map=/home/boiway/projects/tree-1.8.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Wdate-time -D_FORTIFY_SOURCE=2" LDFLAGS="-Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now"
+	make -j1 "CFLAGS=-g -O2 -fdebug-prefix-map=/home/boiway/projects/tree-1.8.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Wdate-time -D_FORTIFY_SOURCE=2" "LDFLAGS=-Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now"
+make[2]: 進入目錄「/home/boiway/projects/tree-1.8.0」
+gcc -g -O2 -fdebug-prefix-map=/home/boiway/projects/tree-1.8.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Wdate-time -D_FORTIFY_SOURCE=2 -c -o tree.o tree.c
+tree.c: In function ‘main’:
+tree.c:561:4: warning: ignoring return value of ‘chdir’, declared with attribute warn_unused_result [-Wunused-result]
+  561 |    chdir(curdir);
+      |    ^~~~~~~~~~~~~
+gcc -g -O2 -fdebug-prefix-map=/home/boiway/projects/tree-1.8.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Wdate-time -D_FORTIFY_SOURCE=2 -c -o unix.o unix.c
+gcc -g -O2 -fdebug-prefix-map=/home/boiway/projects/tree-1.8.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Wdate-time -D_FORTIFY_SOURCE=2 -c -o html.o html.c
+html.c: In function ‘html_listdir’:
+html.c:170:7: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
+  170 |       system(hcmd);
+      |       ^~~~~~~~~~~~
+html.c: In function ‘htmlr_listdir’:
+html.c:336:7: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
+  336 |       system(hcmd);
+      |       ^~~~~~~~~~~~
+gcc -g -O2 -fdebug-prefix-map=/home/boiway/projects/tree-1.8.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Wdate-time -D_FORTIFY_SOURCE=2 -c -o xml.o xml.c
+gcc -g -O2 -fdebug-prefix-map=/home/boiway/projects/tree-1.8.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Wdate-time -D_FORTIFY_SOURCE=2 -c -o json.o json.c
+gcc -g -O2 -fdebug-prefix-map=/home/boiway/projects/tree-1.8.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Wdate-time -D_FORTIFY_SOURCE=2 -c -o hash.o hash.c
+gcc -g -O2 -fdebug-prefix-map=/home/boiway/projects/tree-1.8.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Wdate-time -D_FORTIFY_SOURCE=2 -c -o color.o color.c
+gcc -g -O2 -fdebug-prefix-map=/home/boiway/projects/tree-1.8.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Wdate-time -D_FORTIFY_SOURCE=2 -c -o file.o file.c
+gcc -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -o tree tree.o unix.o html.o xml.o json.o hash.o color.o file.o
+make[2]: 離開目錄「/home/boiway/projects/tree-1.8.0」
+make[1]: 離開目錄「/home/boiway/projects/tree-1.8.0」
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary
+   dh_testroot
+   dh_prep
+   debian/rules override_dh_auto_install
+make[1]: 進入目錄「/home/boiway/projects/tree-1.8.0」
+/usr/bin/make install prefix="/home/boiway/projects/tree-1.8.0/debian/tree/usr" MANDIR="/home/boiway/projects/tree-1.8.0/debian/tree/usr/share/man/man1"
+make[2]: 進入目錄「/home/boiway/projects/tree-1.8.0」
+install -d /home/boiway/projects/tree-1.8.0/debian/tree/usr/bin
+install -d /home/boiway/projects/tree-1.8.0/debian/tree/usr/share/man/man1
+if [ -e tree ]; then \
+	install tree /home/boiway/projects/tree-1.8.0/debian/tree/usr/bin/tree; \
+        install testing.sh /home/boiway/projects/tree-1.8.0/debian/tree/usr/bin/testing.sh; \
+fi
+install doc/tree.1 /home/boiway/projects/tree-1.8.0/debian/tree/usr/share/man/man1/tree.1
+sh /home/boiway/projects/tree-1.8.0/debian/tree/usr/bin/testing.sh
+this is a test from Alucard Lu
+make[2]: 離開目錄「/home/boiway/projects/tree-1.8.0」
+make[1]: 離開目錄「/home/boiway/projects/tree-1.8.0」
+   dh_installdocs
+   dh_installchangelogs
+   dh_installman
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'tree' in '../tree_1.8.0-1ubuntu1_amd64.deb'.
+dpkg-deb: building package 'tree-dbgsym' in 'debian/.debhelper/scratch-space/build-tree/tree-dbgsym_1.8.0-1ubuntu1_amd64.deb'.
+	Renaming tree-dbgsym_1.8.0-1ubuntu1_amd64.deb to tree-dbgsym_1.8.0-1ubuntu1_amd64.ddeb
+ dpkg-genbuildinfo
+ dpkg-genchanges  >../tree_1.8.0-1ubuntu1_amd64.changes
+dpkg-genchanges: 資訊: not including original source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: 資訊: 上傳二進位和差異 (diff) (＊不＊包含原始源碼)
+Now running lintian tree_1.8.0-1ubuntu1_amd64.changes ...
+W: tree source: ancient-standards-version 3.9.8 (released 2016-04-06) (current is 4.5.0)
+W: tree: binary-without-manpage usr/bin/testing.sh
+W: tree: command-with-path-in-maintainer-script postinst:2 /usr/bin/testing.sh
+W: tree: maintainer-script-ignores-errors postinst
+W: tree source: maintainer-script-lacks-debhelper-token debian/postinst
+W: tree source: package-uses-deprecated-debhelper-compat-version 9
+W: tree: script-with-language-extension usr/bin/testing.sh
+Finished running lintian.

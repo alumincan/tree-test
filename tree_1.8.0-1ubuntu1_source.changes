@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Thu, 28 Apr 2022 20:23:31 +0800
+Source: tree
+Architecture: source
+Version: 1.8.0-1ubuntu1
+Distribution: focal
+Urgency: medium
+Maintainer: Florian Ernst <florian@debian.org>
+Changed-By: Alucard Lu <alumincan@gmail.com>
+Changes:
+ tree (1.8.0-1ubuntu1) focal; urgency=medium
+ .
+   * No change
+   * Rebuild for test
+Checksums-Sha1:
+ b076e15f90f60b213af64674cdf2218dda1f5d39 963 tree_1.8.0-1ubuntu1.dsc
+ 08b95110d5bf7ae2945ff3a58730d914b506146a 7404 tree_1.8.0-1ubuntu1.debian.tar.xz
+ f7d282603cc8c196af3c878f3d8d3896832c7f16 5348 tree_1.8.0-1ubuntu1_source.buildinfo
+Checksums-Sha256:
+ ee232621c541afc9a95589e8513f8d2c9fab8cc00fa69b4f735b8b9626fa34b0 963 tree_1.8.0-1ubuntu1.dsc
+ c1bdedef34192856faba1f2d1c26630d2ed416bd097f7669ab3b7f68c97cccfa 7404 tree_1.8.0-1ubuntu1.debian.tar.xz
+ 11a5e909d6ca25b494cfc29963964ebe4f2be66eaf44b04ed5bf15b899dfcd92 5348 tree_1.8.0-1ubuntu1_source.buildinfo
+Files:
+ 8f7117abfeaac2c6830c7fe632980344 963 utils optional tree_1.8.0-1ubuntu1.dsc
+ 40ca32eab773cfdb8a6e73a56c8addd6 7404 utils optional tree_1.8.0-1ubuntu1.debian.tar.xz
+ fab41b6243069cbd1349b22e87b24471 5348 utils optional tree_1.8.0-1ubuntu1_source.buildinfo
